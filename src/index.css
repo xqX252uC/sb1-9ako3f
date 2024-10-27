@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  body {
+    @apply antialiased bg-gray-50;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.tool-button {
+  @apply w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200;
+}
+
+.tool-button:hover .tool-icon {
+  @apply scale-110 rotate-3;
+}
+
+.tool-icon {
+  @apply transition-transform duration-200;
+}
+
+.sidebar-enter {
+  @apply transform -translate-x-full;
+}
+
+.sidebar-enter-active {
+  @apply transform translate-x-0 transition-transform duration-200;
+}
+
+.sidebar-exit {
+  @apply transform translate-x-0;
+}
+
+.sidebar-exit-active {
+  @apply transform -translate-x-full transition-transform duration-200;
+}
